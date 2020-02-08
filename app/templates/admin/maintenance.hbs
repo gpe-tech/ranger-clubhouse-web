@@ -1,4 +1,4 @@
-<h1>Maintenace Tasks {{#if this.task}}- {{this.task.title}}{{/if}}</h1>
+<h1>Maintenance Tasks {{#if this.task}}- {{this.task.title}}{{/if}}</h1>
 
 {{#if this.isSubmitting}}
   <LoadingDialog @customMessage={{concat "The task '" this.task.title "' is being performed. Hang tight!"}} />
