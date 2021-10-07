@@ -265,7 +265,7 @@ export default class ReportsPersonVehiclesController extends ClubhouseController
       {key: 'sticker_number', title: 'Sticker #'},
       {key: 'license_state', title: 'License State'},
       {key: 'license_number', title: 'License #'},
-      {key: 'ranger_logo', title: 'Ranger Logo'},
+      {key: 'ranger_logo', title: 'Logo Sticker'},
       {key: 'fuel_chit', title: 'Fuel Chit'},
       {key: 'amber_light', title: 'Amber Light'},
       {key: 'notes', title: 'Notes'},
