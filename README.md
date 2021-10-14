@@ -2,9 +2,9 @@
 
 [![Build Status](https://github.com/burningmantech/ranger-clubhouse-web/workflows/CI%2fCD/badge.svg)](https://github.com/burningmantech/ranger-clubhouse-web/actions)
 
-The Clubhouse is a volunteer coordination website to help manage the Burning Man Project's Black Rock Rangers department.
+The Gate Clubhouse is a volunteer coordination website to help manage the Burning Man Project's GP&E department.
 
-Want to know more about the Rangers? [Visit the Rangers' website](https://rangers.burningman.org) for more information.
+Want to know more about GP&E? [Visit the GP&E website](https://gate.burningman.org) for more information.
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
