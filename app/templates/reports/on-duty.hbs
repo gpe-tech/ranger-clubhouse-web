@@ -12,8 +12,11 @@
   <ChForm @formId="date-form" @formFor={{this.dateForm}} @validator={{this.dateValidations}}
           @onSubmit={{this.submitForm}} as |f|>
     <FormRow>
-      <FormLabel @auto={{true}}>Date &amp; time to view:</FormLabel>
-      <f.input @name="date" @type="datetime" @wrapClass="col-auto"/>
+      <f.datetime @name="date"
+                  @label="Date &amp; time to view:"
+                  @type="datetime"
+                  @inline={{true}}
+      />
       <div class="col-auto">
         <f.submit @label="Submit"/>
         <UiButton @type="secondary" @onClick={{this.viewCurrentTime}}>View Current Time</UiButton>
@@ -41,7 +44,7 @@ Showing {{pluralize this.timesheet.length "person"}} on duty in {{pluralize this
               {{else}}
                 <th class="w-60">On Duty Since</th>
               {{/if}}
-              <th class="text-right w-15">Duration</th>
+              <th class="text-end w-15">Duration</th>
             </tr>
             </thead>
 
@@ -61,7 +64,7 @@ Showing {{pluralize this.timesheet.length "person"}} on duty in {{pluralize this
                     {{/if}}
                   </td>
                 {{/if}}
-                <td class="w-15 text-right">{{hour-minute-format ts.duration}}</td>
+                <td class="w-15 text-end">{{hour-minute-format ts.duration}}</td>
               </tr>
             {{/each}}
             </tbody>
