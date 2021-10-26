@@ -6,8 +6,8 @@ const TASK_GROUPS = [{
     group_title: 'Positions',
     tasks: [{
       action: 'update-positions',
-      title: 'Set Ranger Positions',
-      description: 'Ensure all Rangers have the correction positions',
+      title: 'Set GPE Positions',
+      description: 'Ensure all GPE members have the correction positions',
       controller: 'maintenance'
     }]
   },
@@ -15,8 +15,8 @@ const TASK_GROUPS = [{
     group_title: 'Account Post Event',
     tasks: [{
         action: 'mark-off-site',
-        title: 'Mark all Rangers as off-site',
-        description: 'Any Ranger who was marked as on site will be marked as off site',
+        title: 'Mark all GPE members as off-site',
+        description: 'Anyone in GPE who was marked as on site will be marked as off site',
         controller: 'maintenance'
       },
       {
@@ -38,8 +38,8 @@ const TASK_GROUPS = [{
     group_title: 'Ticketing',
     tasks: [{
         action: 'grant-waps',
-        title: 'Grant Ranger WAPs',
-        description: "Grant Work Access Passes to any active or inactive Ranger who doesn't have one already",
+        title: 'Grant GPA WAPs',
+        description: "Grant Work Access Passes to any active or inactive GPE member who doesn't have one already",
         controller: 'access-document'
       },
       {

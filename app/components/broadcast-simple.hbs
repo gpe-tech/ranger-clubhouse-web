@@ -23,30 +23,30 @@
   {{/unless}}
 
   {{#if (eq @type "emergency")}}
-    <h3 class="text-danger">SEND TO ALL ON-PLAYA RANGERS, NOT ALREADY ON DUTY</h3>
+    <h3 class="text-danger">SEND TO ALL ON-PLAYA GPE, NOT ALREADY ON DUTY</h3>
     <p>
       This will send a text and email message to
-      <b>ALL {{@broadcast.receivers}} ON-PLAYA Rangers who are not already on duty</b>.<br>
+      <b>ALL {{@broadcast.receivers}} ON-PLAYA GPE who are not already on duty</b>.<br>
       It should ONLY be used in emergencies (mass mobilization for fire, fatality, plane crash, etc.).<br>
       <br>
       <b class="text-danger">Please be brief and choose your words carefully as they may end up on the front page of the
         New York Times.</b>
     </p>
   {{else if (eq @type "onshift")}}
-    <h3>Text Message ONLY to {{pluralize @broadcast.receivers "ON SHIFT Ranger"}}</h3>
+    <h3>Text Message ONLY to {{pluralize @broadcast.receivers "ON SHIFT GPE"}}</h3>
     <p>
-      This will send only a TEXT message to {{@broadcast.receivers}} ON SHIFT Rangers.
-      Only Rangers who have opted-in to receive On Shift messages AND who are
+      This will send only a TEXT message to {{@broadcast.receivers}} ON SHIFT GPE.
+      Only GPE who have opted-in to receive On Shift messages AND who are
       carrying their cellphones might receive this message. Delivery is
       not guaranteed.<br>
       <br>
       <b class="text-danger">If you need to send an emergency message to EVERYONE, you're in the wrong place.</b>
     </p>
   {{else}}
-    <h3>Text And Email Off-Duty Ranger</h3>
+    <h3>Text And Email Off-Duty GPE</h3>
     <p>
       This will send a text and email to {{if (eq @type "recruit-dirt") @broadcast.receivers}} off-duty
-      Rangers who have indicated they might be willing to come in and work some extra shifts when needed.
+      GPE who have indicated they might be willing to come in and work some extra shifts when needed.
       You can use this if your shift is low on people.<br>
       <b class="text-danger">If you need to send an emergency message to EVERYONE, you're in the wrong place.</b>
     </p>
@@ -59,7 +59,7 @@
               @validator={{this.broadcastValidations}}
               @onSubmit={{this.reviewAction}} as |f|>
         {{#if @broadcast.has_muster_position}}
-          <h4>Special Team That Needs More Rangers</h4>
+          <h4>Special Team That Needs More GPE</h4>
           <FormRow>
             <f.select @name="position_id"
                       @options={{this.positionOptions}} />

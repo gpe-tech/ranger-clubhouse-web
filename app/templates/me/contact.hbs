@@ -1,10 +1,10 @@
-<h1>Contact An Active Ranger</h1>
+<h1>Contact An Active GPE member</h1>
 <BackToHome/>
 
 <p>
-  Use this page to send a contact message, via email, to a Ranger. Messages may only be
-  sent to currently active or inactive Rangers. (An inactive Ranger is a person
-  who has not rangered the last three years.) Individuals who are prospectives,
+  Use this page to send a contact message, via email, to a member of GPE. Messages may only be
+  sent to currently active or inactive member. (An inactive member is a person
+  who has not worked the last three years.) Individuals who are prospectives,
   alphas, bonked, retired, etc. may not be sent a message through this service.
 </p>
 
@@ -16,14 +16,14 @@
     be revealed by the Clubhouse.
   </p>
   <p>
-    <b>A Ranger callsign may not appear in the search results if the person is no longer active.</b>
+    <b>A callsign may not appear in the search results if the person is no longer active.</b>
   </p>
 
   <ChForm @formId="search" @formFor={{this.searchForm}} @changeSet={{false}} @onFormChange={{this.searchOnChange}}
           as |f|>
     <FormRow>
       <f.text @name="callsign"
-              @label="Start typing the callsign of Ranger you wish to contact:"
+              @label="Start typing the callsign of the person you wish to contact:"
               @size={{30}}
               @autofocus={{true}} />
     </FormRow>

@@ -181,7 +181,7 @@ export default class ApplicationRoute extends ClubhouseRoute {
       }
     }
     tokens = tokens.reverse();
-    let siteName = 'Ranger Clubhouse';
+    let siteName = 'GPE Clubhouse';
     let env = config('DeploymentEnvironment');
     if (env && env !== 'Production') {
       siteName = `${env} Clubhouse`;

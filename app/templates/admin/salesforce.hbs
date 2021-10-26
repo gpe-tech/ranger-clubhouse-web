@@ -231,7 +231,7 @@
                     <PersonLink @person={{account.existing_person}} />
                     &lt;{{account.existing_person.status}}&gt;<br>
                   {{/if}}
-                  <b>Ranger Obj. Name:</b> {{account.salesforce_ranger_object_name}}<br>
+                  <b>GPE Obj. Name:</b> {{account.salesforce_ranger_object_name}}<br>
                   <b>BPGUID:</b>{{account.bpguid}}<br>
                   {{#if (eq account.status "existing")}}
                     <b>Street:</b> {{account.existing_person.street1}} &rarr; {{account.street1}}<br>
@@ -241,7 +241,7 @@
                     <b>Phone:</b> {{account.existing_person.home_phone}} &rarr; {{account.phone}}<br>
                     <b>Emergency Contact:</b> {{account.existing_person.emergency_contact}}
                     &rarr; {{account.emergency_contact}}<br>
-                    <b>Known Ranger Names:</b> {{account.existing_person.known_rangers}}
+                    <b>Known GPE Names:</b> {{account.existing_person.known_rangers}}
                     &rarr; {{account.known_ranger_names}}<br>
                     <b>Known PNV Names:</b> {{account.existing_person.known_pnvs}} &rarr; {{account.known_pnv_names}}
                     <br>
@@ -256,7 +256,7 @@
                     <b>Country:</b> {{account.country}}<br>
                     <b>Phone:</b> {{account.phone}}<br>
                     <b>Emergency Contact:</b> {{account.emergency_contact}}<br>
-                    <b>Known Ranger Names:</b> {{account.known_ranger_names}}<br>
+                    <b>Known GPE Names:</b> {{account.known_ranger_names}}<br>
                     <b>Known PNV Names:</b> {{account.known_pnv_names}}<br>
                     <b>T-Shirt Info:</b> {{account.teeshirt_size_style}}<br>
                     <b>LS Shirt Info:</b> {{account.longsleeveshirt_size_style}}<br>

@@ -35,7 +35,7 @@ Showing {{this.viewPositions.length}} of {{this.positions.length}} positions
     <th>Min / Max</th>
     <th class="text-center">Active</th>
     <th class="text-center">New User Eligible</th>
-    <th class="text-center">All Rangers</th>
+    <th class="text-center">All GPE</th>
     <th class="text-center">Count Hrs</th>
     <th class="text-center">On SL report</th>
     <th>Prevent Multi. Enrollments</th>
@@ -125,7 +125,7 @@ Showing {{this.viewPositions.length}} of {{this.positions.length}} positions
         </fieldset>
 
         <fieldset>
-          <legend>Suggested Ranger Counts Per Slot</legend>
+          <legend>Suggested Headcount Per Slot</legend>
           <FormRow>
             <f.number @name="min"
                       @label="Min"
@@ -151,13 +151,13 @@ Showing {{this.viewPositions.length}} of {{this.positions.length}} positions
             </div>
           </FormRow>
           <p class="text-danger">
-            After setting the <i>"All Rangers"</i> and/or <i>"Grant to new Prospective accounts"</i> flags,
-            the maintenance "Set Ranger Positions" function has to be run to grant the position to existing accounts.
+            After setting the <i>"All GPE"</i> and/or <i>"Grant to new Prospective accounts"</i> flags,
+            the maintenance "Set GPE Positions" function has to be run to grant the position to existing accounts.
           </p>
           <FormRow>
             <div class="col-12 ">
               <f.checkbox @name="all_rangers"
-                          @label="All Rangers (status active / inactive / inactive extension / retired)"/>
+                          @label="All GPE (status active / inactive / inactive extension / retired)"/>
             </div>
           </FormRow>
           <FormRow>
@@ -172,7 +172,7 @@ Showing {{this.viewPositions.length}} of {{this.positions.length}} positions
           <FormRow>
             <div class="col-12">
               <f.checkbox @name="count_hours"
-                          @label="Hours count towards appreciations (Ranger clothing, meal plans, etc.)"/>
+                          @label="Hours count towards appreciations (GPE clothing, meal plans, etc.)"/>
               <f.checkbox @name="prevent_multiple_enrollments"
                           @label="Prevent Multiple Enrollments (usually for Training positions)"/>
               <f.checkbox @name="on_sl_report"

@@ -5,12 +5,12 @@ import {
 
 export default {
   message_from: [
-    validatePresence({ presence: true, message: "Enter the Ranger or team this message is from."}),
+    validatePresence({ presence: true, message: "Enter the person or team this message is from."}),
     validateLength({ min: 2 })
   ],
 
   recipient_callsign: [
-    validatePresence({ presence: true, message: "Enter the ranger's callsign."}),
+    validatePresence({ presence: true, message: "Enter the person's callsign."}),
     validateLength({ min: 2 })
   ],
 

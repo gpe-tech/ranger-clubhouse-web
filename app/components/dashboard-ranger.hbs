@@ -1,4 +1,4 @@
-<div class="homepage-title">Clubhouse Ranger Dashboard</div>
+<div class="homepage-title">GPE Clubhouse Dashboard</div>
 {{#if @person.unread_message_count}}
   <p>
     <LinkTo @route="me.messages">
@@ -11,12 +11,12 @@
   {{#if @person.isNonRanger}}
     Hello Volunteer {{@person.callsign}}.
     {{#if @years.non_ranger_years}}
-      Thank you for volunteering with the Rangers for {{pluralize @years.non_ranger_years.length "year"}}.
+      Thank you for volunteering with GPE for {{pluralize @years.non_ranger_years.length "year"}}.
     {{else}}
-      Thank you for helping the Rangers.
+      Thank you for helping GPE.
     {{/if}}
   {{else}}
-    Hello Ranger {{@person.callsign}}, thank you for {{this.serviceInfo}}.
+    Hello {{@person.callsign}}, thank you for {{this.serviceInfo}}.
   {{/if}}
 </p>
 

@@ -32,7 +32,7 @@ export default class ResetPasswordController extends ClubhouseController {
           break;
 
         case 403:
-          this.modal.info(null, 'Sorry, this account has been temporarily disabled. Please contact the Ranger Personnel Manager.');
+          this.modal.info(null, 'Sorry, this account has been temporarily disabled. Please contact the GPE Personnel Manager.');
           break;
 
         default:

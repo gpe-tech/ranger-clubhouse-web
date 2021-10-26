@@ -50,8 +50,8 @@ export default class AdminThankYouCardsController extends ClubhouseController {
 
     this.people.forEach((person) => {
       person.country_normalized = (CountryLabels[person.country] || person.country).toUpperCase();
-      person.team = 'Rangers';
-      person.playa_name = `Ranger ${person.callsign}`
+      person.team = 'GPE';
+      person.playa_name = `${person.callsign}`
     });
 
     this.house.downloadCsv(`${this.year}-thank-you-cards.csv`, CSV_COLUMNS, this.people);

@@ -9,7 +9,7 @@
 
   {{#if (eq this.taskAction "update-positions")}}
     <p>
-      The following changes have been made to Ranger positions:
+      The following changes have been made to GPE positions:
     </p>
     <b>{{pluralize this.results.actives.length "person"}} - updated positions</b>
     <table class="table table-striped table-hover table-width-auto">
@@ -157,7 +157,7 @@
       {{/each}}
     {{else}}
       <p class="text-danger">
-        <b>No qualifying {{if (eq this.taskAction "grant-alpha-waps") "Alphas" "active/inactive Rangers"}} were found to
+        <b>No qualifying {{if (eq this.taskAction "grant-alpha-waps") "Alphas" "active/inactive GPE members"}} were found to
           grant WAPs to.</b>
       </p>
     {{/if}}

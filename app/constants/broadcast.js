@@ -54,7 +54,7 @@ export const Broadcasts = {
 
     [Type.SLOT]: {
         title: 'Shift Sign-Ups Broadcast',
-        subject: '[Rangers] Information concerning a shift you are signed up for',
+        subject: '[GPE] Information concerning a shift you are signed up for',
     },
 
     /*
@@ -65,20 +65,20 @@ export const Broadcasts = {
      */
 
      [Type.ONSHIFT]: {
-         title: 'Rangers On Shift Broadcast',
+         title: 'GPE On Shift Broadcast',
      },
 
      [Type.RECRUIT_DIRT]: {
-         title: 'Request willing off-duty Dirt Rangers to report for duty',
-         message: 'Dirt shift is understaffed. More Rangers needed NOW. Report to HQ if you are available and want to help.',
+         title: 'Request willing off-duty GPE to report for duty',
+         message: 'Lanes are understaffed. More volunteers needed NOW. Report to HQ if you are available and want to help.', // unsure about dirt - ~dwh
      },
 
     [Type.RECRUIT_POSITION]: {
-        title: 'Request willing off-duty Special Team Rangers to report for duty',
+        title: 'Request willing off-duty Special Team Rangers to report for duty', // ~ what is this in our system? ~dwh
     },
 
     [Type.EMERGENCY]: {
-        title: 'Emergency Broadcast To Rangers',
-        message: 'EMERGENCY! ALL RANGERS NEEDED NOW! REPORT TO HQ, BERLIN, OR TOKYO OUTPOSTS.'
+        title: 'Emergency Broadcast To GPE',
+        message: 'EMERGENCY! ALL GPE STAFF NEEDED NOW! REPORT TO THE BLACK HOLE.'
     }
 };
