@@ -3,10 +3,10 @@
        role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        {{fa-icon this.iconName}} {{@toast.message}}
+        {{fa-icon this.iconName}} {{this.message}}
       </div>
       <button type="button"
-              class="btn-close btn-close-white me-2 m-auto" s{{action this.closeAction}}
+              class="btn-close btn-close-white me-2 m-auto" {{action this.closeAction}}
               aria-label="Close"></button>
     </div>
   </div>

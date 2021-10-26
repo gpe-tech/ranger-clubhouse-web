@@ -6,7 +6,6 @@ import {config} from 'clubhouse/utils/config';
 import {UnauthorizedError} from '@ember-data/adapter/error';
 import {schedule} from '@ember/runloop';
 import ENV from 'clubhouse/config/environment';
-import $ from 'jquery';
 import dayjs from 'dayjs';
 import RSVP from 'rsvp';
 
@@ -29,6 +28,10 @@ export default class ApplicationRoute extends ClubhouseRoute {
     this.router.on('routeDidChange', (transition) => {
       // Move the window back to the top when heading to a new route
       schedule('afterRender', () => window.scrollTo(0, 0));
+
+      if (!transition.isActive) {
+        this.send('collectTitleTokens', []);
+      }
 
       if (!ENV.logRoutes) {
         // don't bother setting up recording route transitions if not enabled.
@@ -133,7 +136,8 @@ export default class ApplicationRoute extends ClubhouseRoute {
     // Close up the navbar when clicking on a menu item and
     // the navigation bar is not expanded - i.e. when showning
     // on a cellphone.
-    schedule('afterRender', () => $('.navbar-collapse').collapse('hide'));
+    this.house.collapse('.navbar-collapse', 'hide');
+    return true;
   }
 
   /**
@@ -167,13 +171,10 @@ export default class ApplicationRoute extends ClubhouseRoute {
     return true;
   }
 
-
-
-  // Dynamic page title: https://github.com/mike-north/ember-cli-document-title-northm
   // Routes can customize their portion of the name with a titleToken property or function,
   // see routes/person.js for an example.
   title(tokens) {
-    if (tokens.length === 0) {
+    if (tokens.length === 0 && this.router.currentRouteName) {
       tokens = this.router.currentRouteName.split('.').map((x) => humanize([x]));
       if (tokens[tokens.length - 1] === 'Index') {
         tokens.pop();

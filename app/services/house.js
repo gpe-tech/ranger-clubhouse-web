@@ -1,14 +1,13 @@
-import Service from '@ember/service';
+import Service, {inject as service} from '@ember/service';
 import ENV from 'clubhouse/config/environment';
-import {inject as service} from '@ember/service';
 import {isAbortError, isTimeoutError} from 'ember-ajax/errors';
 import {isArray} from '@ember/array';
 import {run} from '@ember/runloop';
 import {isEmpty} from '@ember/utils';
 import currentYear from 'clubhouse/utils/current-year';
 import {isChangeset} from 'validated-changeset';
-import {InvalidError, ServerError, TimeoutError, AbortError, NotFoundError} from '@ember-data/adapter/error'
-import $ from 'jquery';
+import {AbortError, InvalidError, NotFoundError, ServerError, TimeoutError} from '@ember-data/adapter/error'
+import bootstrap from 'bootstrap';
 
 export default class HouseService extends Service {
   @service toast;
@@ -40,11 +39,13 @@ export default class HouseService extends Service {
       return;
     }
 
+    const haveChangeset = (changeSet && 'pushErrors' in changeSet);
+
     // Ember Data request error
     if (response instanceof InvalidError) {
       responseErrors = response.errors.map((error) => error.title);
       errorType = 'validation';
-      if (changeSet && response.errors) {
+      if (haveChangeset && response.errors) {
         // Populate change set model with the validation errors
         response.errors.forEach(({title, source}) => {
           const attr = source.pointer.replace('/data/attributes/', '');
@@ -102,7 +103,7 @@ export default class HouseService extends Service {
 
         case 422:
           errorType = 'validation';
-          if (changeSet && response.payload && response.payload.errors) {
+          if (haveChangeset && response.payload && response.payload.errors) {
             // Populate change set model with the validation errors
             response.payload.errors.forEach(({title, source}) => {
               const attr = source.pointer.replace('/data/attributes/', '');
@@ -160,7 +161,7 @@ export default class HouseService extends Service {
   saveModel(model, successMessage, routeOrCallback = null) {
     this.toast.clear();
 
-    const isCallback = typeof (routeOrCallback) == 'function';
+    const isCallback = typeof (routeOrCallback) === 'function';
 
     /*
     if (!model.get('isDirty') && !model.get('isNew')) {
@@ -202,7 +203,7 @@ export default class HouseService extends Service {
 
   downloadCsv(filename, columns, data) {
     const headers = columns.map((column) => {
-      if (typeof column == 'string') {
+      if (typeof column === 'string') {
         return column;
       } else {
         return column.title;
@@ -310,7 +311,7 @@ export default class HouseService extends Service {
         element.scrollIntoView({behavior: scroll ? 'smooth' : 'auto'});
       } else if (scrollToTop) {
         // Element is already in view, scroll element mostly to the top.
-        window.scroll({ top: top + window.scrollY - 100, behavior: scroll ? 'smooth' : 'auto'});
+        window.scroll({top: top + window.scrollY - 100, behavior: scroll ? 'smooth' : 'auto'});
       }
     });
   }
@@ -410,17 +411,23 @@ export default class HouseService extends Service {
    */
 
   toggleAllAccordions(show) {
-    run('afterRender', () =>  $('.accordion-body').collapse(show ? 'show' : 'hide'));
+    this.collapse('.acccordion-body', show ? 'show' : 'hide');
   }
 
   toggleSingleAccordion(containerId, show) {
-    run('afterRender', ()=> {
-      $(`${containerId} .accordion-body`).collapse(show ? 'show' : 'hide');
-      this.scrollToElement(containerId, true);
-    });
+    this.collapse(`${containerId} .accordion-body`, show ? 'show' : 'hide');
+    this.scrollToElement(containerId, true);
   }
 
-  collapse(element, action) {
-    run('afterRender', () => $(element).collapse(action));
+  collapse(selector, action) {
+    run('afterRender', () => {
+      if (typeof (selector) === 'string') {
+        document.querySelectorAll(selector).forEach((element) => {
+         bootstrap.Collapse.getOrCreateInstance(element, { toggle: false})[action]();
+        })
+      } else {
+        bootstrap.Collapse.getOrCreateInstance(selector, { toggle: false})[action]();
+      }
+    });
   }
 }

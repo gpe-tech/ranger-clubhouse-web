@@ -4,40 +4,45 @@
   teams) for the years chosen.
 </p>
 
-<div class="border border-dark p-4 mb-2">
-  <ChForm @formId="teamsForm" @formFor={{this.teamsForm}} @changeSet={{false}}
-          @onSubmit={{this.searchTeamsAction}} as |f|>
-    <FormRow>
-      <FormLabel @fixed={{true}}>Teams:</FormLabel>
-      <f.input @name="positionIds"
-               @type="checkboxGroup"
-               @options={{this.positionOptions}}
-               @cols={{4}} />
-    </FormRow>
-    <FormRow>
-      <FormLabel @fixed={{true}}>Year start:</FormLabel>
-      <f.input @name="startYear" @type="select" @options={{this.yearOptions}} />
-      <f.input @name="endYear" @label="Year end:" @type="select" @options={{this.yearOptions}} />
-      <div class="col-auto mt-2">
-        <f.input @name="showInactives"
-                 @label="Include people who hold the position(s) but may not have worked in the year range"
-                 @type="checkbox" @inlineCheckbox={{true}} />
-      </div>
-    </FormRow>
-    <FormRow>
-      <FormLabel @fixed={{true}}>&nbsp;</FormLabel>
-      <div class="col-auto">
-        <f.submit @label="Submit" @disabled={{this.isSubmitting}}/>
-        {{#if this.isSubmitting}}
-          <LoadingIndicator/>
-        {{/if}}
-        {{#if (and this.haveResults (not this.people))}}
-          <p class="text-danger">No people were found who matched the criteria.</p>
-        {{/if}}
-      </div>
-    </FormRow>
-  </ChForm>
-</div>
+<UiSection>
+  <:body>
+    <ChForm @formId="teamsForm"
+            @formFor={{this.teamsForm}}
+            @changeSet={{false}}
+            @onSubmit={{this.searchTeamsAction}} as |f|>
+      <FormRow>
+        <f.checkboxGroup @name="positionIds"
+                         @label="Teams:"
+                         @options={{this.positionOptions}}
+                         @cols={{4}} />
+      </FormRow>
+      <FormRow>
+        <f.select @name="startYear"
+                  @label="Start Year:"
+                  @options={{this.yearOptions}}
+                  @inline={{true}}
+        />
+        <f.select @name="endYear"
+                  @label="Ending Year:"
+                  @options={{this.yearOptions}}
+                  @inline={{true}}
+        />
+        <div class="col-auto mt-2">
+          <f.checkbox @name="showInactives"
+                      @label="Include people who hold the position(s) but may not have worked in the year range"
+                      @inline={{true}} />
+        </div>
+      </FormRow>
+      <f.submit @label="Submit" @disabled={{this.isSubmitting}}/>
+      {{#if this.isSubmitting}}
+        <LoadingIndicator/>
+      {{/if}}
+      {{#if (and this.haveResults (not this.people))}}
+        <p class="text-danger">No people were found who matched the criteria.</p>
+      {{/if}}
+    </ChForm>
+  </:body>
+</UiSection>
 
 {{#if (and this.haveResults this.people)}}
   <UiSection>
@@ -61,9 +66,9 @@
             <th>Email</th>
           {{/if}}
           {{#each this.yearList as |year|}}
-            <th class="text-right">{{year}} Hours</th>
+            <th class="text-end">{{year}} Hours</th>
           {{/each}}
-          <th class="text-right">Total</th>
+          <th class="text-end">Total</th>
         </tr>
         </thead>
 
@@ -85,17 +90,17 @@
               </td>
             {{/if}}
             {{#each person.years as |duration|}}
-              <td class="text-right">{{hour-format duration}}</td>
+              <td class="text-end">{{hour-format duration}}</td>
             {{/each}}
-            <td class="text-right">{{hour-format person.total_duration}}</td>
+            <td class="text-end">{{hour-format person.total_duration}}</td>
           </tr>
         {{/each}}
         <tr>
-          <td colspan="{{if this.session.canViewEmail 4 3}}" class="text-right"><b>Totals</b></td>
+          <td colspan="{{if this.session.canViewEmail 4 3}}" class="text-end"><b>Totals</b></td>
           {{#each this.totalsList as |total|}}
-            <td class="text-right">{{hour-format total}}</td>
+            <td class="text-end">{{hour-format total}}</td>
           {{/each}}
-          <td class="text-right">{{hour-format this.grandTotal}}</td>
+          <td class="text-end">{{hour-format this.grandTotal}}</td>
         </tr>
         </tbody>
       </table>
