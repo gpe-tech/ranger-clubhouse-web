@@ -1,6 +1,6 @@
-# The Black Rock Rangers Clubhouse 2.0 - A Single Page Application (SPA) frontend
+# The Gate Clubhouse 2.0 - A Single Page Application (SPA) frontend
 
-[![Build Status](https://github.com/burningmantech/ranger-clubhouse-web/workflows/CI%2fCD/badge.svg)](https://github.com/burningmantech/ranger-clubhouse-web/actions)
+[![Build Status](https://github.com/gpe-tech/ranger-clubhouse-web/workflows/CI%2fCD/badge.svg)](https://github.com/gpe-tech/ranger-clubhouse-web/actions)
 
 The Gate Clubhouse is a volunteer coordination website to help manage the Burning Man Project's GP&E department.
 
