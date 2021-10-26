@@ -128,7 +128,7 @@ export default class VcAccessDocumentsTrsController extends ClubhouseController 
     ['Staff Credentials+VP', STAFF_CREDENTIAL_VP],
     ['Reduced-Price Tickets', RPT],
     ['Vehicle Passes', VEHICLE_PASS],
-    ['Work Access Passes Ranger', WAP_RANGER],
+    ['Work Access Passes GPE', WAP_RANGER],
     ['Work Access Passes SO', WAPSO],
     ['Work Access Passes PNV', WAP_PNV],
     ['Work Access Passes All', WAP_ALL],
@@ -313,7 +313,7 @@ export default class VcAccessDocumentsTrsController extends ClubhouseController 
     row.last_name = person.last_name;
     row.full_name = `${person.first_name} ${person.last_name}`;
     row.email = person.email;
-    row.project_name = `Ranger ${person.callsign}`;
+    row.project_name = `${person.callsign}`;
   }
 
   @action

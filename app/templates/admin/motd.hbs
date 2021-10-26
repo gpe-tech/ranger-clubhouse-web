@@ -1,7 +1,7 @@
 <h1>Clubhouse Announcements / Messages Of The Day (MOTD)</h1>
 
 <p>
-  Announces are shown on the user's homepage and can be targeted to active Rangers, Prospectives and/or Auditors.
+  Announces are shown on the user's homepage and can be targeted to active GPE members, Prospectives and/or Auditors.
 </p>
 
 <ChForm @formId="query" @formFor={{this.query}} @changeSet={{false}} @onSubmit={{this.searchAction}} as |f|>
@@ -45,7 +45,7 @@ Showing {{this.total}} of {{pluralize this.table_count "message"}}. Page {{this.
     <tr>
       <td>
         {{#if motd.for_rangers}}
-          Rangers<br>
+          GPE<br>
         {{/if}}
         {{#if motd.for_pnvs}}
           Prospectives/Alphas<br>
@@ -104,7 +104,7 @@ Showing {{this.total}} of {{pluralize this.table_count "message"}}. Page {{this.
           <FormLabel @fixed={{true}}>Audience</FormLabel>
           <div class="col-auto mt-2">
               <f.checkbox @name="for_rangers"
-                          @label="Rangers"
+                          @label="GPE members"
                           @inline={{true}} />
               <f.checkbox @name="for_pnvs"
                           @label="Prospectives + Alphas"

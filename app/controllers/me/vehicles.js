@@ -49,7 +49,7 @@ export default class MeVehiclesController extends ClubhouseController {
 
   amberLightOptions = [
     {id: 'none', title: 'None'},
-    {id: 'department', title: 'Ranger Department Supplied'},
+    {id: 'department', title: 'GPE Department Supplied'},
     {id: 'already-has', title: 'Providing My Own'}
 
   ];

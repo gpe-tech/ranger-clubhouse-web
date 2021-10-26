@@ -44,13 +44,13 @@
       <NavbarMenuItem @route="admin.timesheet-sanity-checker" @item="Timesheet Sanity Checker"/>
       <NavbarMenuItem @route="admin.hours-credits" @item="Hours/Credits"/>
       <NavbarMenuItem @route="admin.people-by-status-change" @item="People By Status Change"/>
-      <NavbarMenuItem @route="admin.ranger-retention" @item="Ranger Retention Report"/>
+      <NavbarMenuItem @route="admin.ranger-retention" @item="GPE Retention Report"/>
     </NavbarMenuSection>
   {{/if}}
   {{#if (has-role "admin" "megaphone")}}
     <NavbarMenuSection @section="Communications">
       <NavbarMenuItem @route="admin.motd" @item="Announcements"/>
-      <NavbarMenuItem @route="admin.rbs" @item="Ranger Broadcast"/>
+      <NavbarMenuItem @route="admin.rbs" @item="GPE Broadcast"/>
     </NavbarMenuSection>
   {{/if}}
 </NavbarMenu>

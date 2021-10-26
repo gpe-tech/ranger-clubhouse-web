@@ -1,12 +1,12 @@
-<h1>Ranger Retention Report</h1>
+<h1>GPE Retention Report</h1>
 <p>
-  This report shows active, inactive, inactive extension, and retired status Rangers who have worked from
-  any year from {{this.start_year}} to {{this.end_year}}. A work year is excluded if the Ranger had only Alpha,
+  This report shows active, inactive, inactive extension, and retired status GPE members who have worked from
+  any year from {{this.start_year}} to {{this.end_year}}. A work year is excluded if the person had only Alpha,
   Training,
   and/or Deep Freeze timesheet entries.
 </p>
 <p>
-  The information is used by the Ranger Retention Team to send out retention surveys post-event.
+  The information is used by the GPE Retention Team to send out retention surveys post-event.
 </p>
 <p>
   <UiButton @onClick={{this.exportToCsv}}>Export To CSV</UiButton>
@@ -36,7 +36,7 @@
     </tr>
   {{else}}
     <tr>
-      <td colspan="6"><b class="text-danger">No Rangers were found? Odd.</b></td>
+      <td colspan="6"><b class="text-danger">No one was found? Odd.</b></td>
     </tr>
   {{/each}}
   </tbody>

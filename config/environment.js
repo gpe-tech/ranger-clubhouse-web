@@ -85,7 +85,7 @@ module.exports = function (environment) {
       'media-src': "'self' *"
     }
 
-    ENV['api-server'] = 'http://localhost:8000';
+    ENV['api-server'] = 'http://localhost:8000/api';
 
     ENV['ember-simple-auth-token'].serverTokenEndpoint = ENV['api-server'] + '/auth/login';
     ENV['ember-simple-auth-token'].serverTokenRefreshEndpoint = ENV['api-server'] + '/auth/refresh';
@@ -140,7 +140,7 @@ module.exports = function (environment) {
     // Trace people has they navigate thru the client
     ENV.logRoutes = true;
 
-    ENV['api-server'] = (process.env.RANGER_CLUBHOUSE_API_URL || '/api');
+    ENV['api-server'] = 'http://localhost:8000/api'; // (process.env.RANGER_CLUBHOUSE_API_URL || '/api');
     ENV['ember-simple-auth-token'].serverTokenEndpoint = ENV['api-server'] + '/auth/login';
     ENV['ember-simple-auth-token'].serverTokenRefreshEndpoint = ENV['api-server'] + '/auth/refresh';
   }

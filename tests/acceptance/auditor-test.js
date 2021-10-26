@@ -27,7 +27,7 @@ module('Acceptance | auditor', function (hooks) {
       ['/me/motorpool-policy', false, 'Motorpool Policy'],
       ['/me/messages', false, 'Messages'],
       ['/me/alerts', true, 'Alerts'],
-      ['/me/contact', false, 'Ranger Contact'],
+      ['/me/contact', false, 'GPE Contact'],
       ['/me/personal-info', true, 'Personal Info'],
       ['/me/emergency-contact', false, 'Emergency Contact'],
       ['/me/password', true, 'Change Password'],
@@ -74,7 +74,7 @@ module('Acceptance | auditor', function (hooks) {
     assert.equal(currentURL(), '/me/event-info');
   });
 
-  test('Auditor should not be able to visit the Contact Ranger page', async function (assert) {
+  test('Auditor should not be able to visit the Contact GPE member page', async function (assert) {
     await visit('/me/contact');
     assert.equal(currentURL(), '/me');
   });

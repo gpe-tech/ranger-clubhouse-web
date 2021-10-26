@@ -1,6 +1,6 @@
 <NavbarMenu @title="Me">
   {{#if (not (or @user.isPastProspective @user.isProspectiveWaitlist))}}
-    <NavbarMenuSection @section="Rangering">
+    <NavbarMenuSection @section="Shifts">
       <NavbarMenuItem @route="me.schedule" @item="Schedule / Sign Up"/>
       {{#if (or @user.isAlpha @user.isRanger)}}
         <NavbarMenuItem @route="me.timesheet-corrections.index" @item="Timesheet Corrections"/>
@@ -39,7 +39,7 @@
     {{/if}}
     {{#if @user.isRanger}}
       <NavbarMenuItem @route="me.messages" @item="Messages"/>
-      <NavbarMenuItem @route="me.contact" @item="Contact Ranger"/>
+      <NavbarMenuItem @route="me.contact" @item="Contact GPE member"/>
     {{/if}}
     {{#if @user.teacher.have_mentored}}
       <NavbarMenuItem @route="me.mentees" @item="My Mentees"/>

@@ -10,7 +10,7 @@ module('Acceptance | me/personal info', function(hooks) {
     const person = this.server.create('person');
     await authenticateUser(person.id)
     await visit('/me/personal-info');
-    assert.equal(document.title, 'Personal info | Me | Ranger Clubhouse');
+    assert.equal(document.title, 'Personal info | Me | GPE Clubhouse');
 
     const fields = [
       'first_name', 'mi', 'last_name',

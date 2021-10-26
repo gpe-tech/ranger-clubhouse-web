@@ -408,7 +408,7 @@ test_root_resource() {
 
     local body="$(http_body < "${response}")";
 
-    if [ "${body}" != "Ranger Clubhouse Web Application" ]; then
+    if [ "${body}" != "GPE Clubhouse Web Application" ]; then
         fail "Unexpected body for root resource.";
         echo "Response:"; cat "${response}";
         return 1;
@@ -444,7 +444,7 @@ test_app_root() {
 
     http_body < "${response}" > "${body}";
 
-    if ! grep "<title>Ranger Clubhouse</title>" "${body}" > /dev/null; then
+    if ! grep "<title>GPE Clubhouse</title>" "${body}" > /dev/null; then
         fail "Unexpected body for web application root resource.";
         echo "Content-Type: ${content_type}";
         echo "Response:"; cat "${response}";

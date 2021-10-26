@@ -422,7 +422,7 @@ export const SIGN_UP_FOR_SHIFTS = {
     if (!milestones.dirt_shifts_available) {
       return {
         result: NOT_AVAILABLE,
-        message: 'The full Ranger schedule is not available yet. Usually the schedule is posted in June.',
+        message: 'The full GPE schedule is not available yet. Usually the schedule is posted in June.',
       };
     }
 
@@ -483,7 +483,7 @@ export const SIGN_BEHAVIORAL_AGREEMENT = {
 };
 
 export const SIGN_MOTORPOOL_AGREEMENT = {
-  name: 'Sign the Ranger Motorpool Policy (optional)',
+  name: 'Sign the GPE Motorpool Policy (optional)',
   skipPeriod: AFTER_EVENT,
   check({milestones}) {
     if (!milestones.motorpool_agreement_available) {
@@ -498,8 +498,8 @@ export const SIGN_MOTORPOOL_AGREEMENT = {
       route: 'me.motorpool-policy',
       linkedMessage: {
         route: 'me.motorpool-policy',
-        prefix: 'The Ranger motorpool is a relatively limited resource. Vehicles are assigned by Shift Command, according to the needs of that shift.\n' +
-          'If needed, are you comfortable driving a Ranger gator, golf cart, or UTV while on shift? Visit',
+        prefix: 'The GPE motorpool is a relatively limited resource. Vehicles are assigned by Shift Command, according to the needs of that shift.\n' +
+          'If needed, are you comfortable driving a GPE vehicle while on shift? Visit',
         text: 'Me > Motorpool Policy',
         suffix: 'to review and agree to the Motorpool Policy.'
       },
@@ -525,7 +525,7 @@ export const VERIFY_TIMESHEETS_FINISHED = {
 };
 
 export const SIGN_RADIO_CHECKOUT_AGREEMENT = {
-  name: 'Sign the Ranger Radio Checkout Agreement',
+  name: 'Sign the GPE Radio Checkout Agreement',
   skipPeriod: AFTER_EVENT,
   check({milestones, isPNV, person}) {
     if (milestones.asset_authorized) {
@@ -552,11 +552,11 @@ export const SIGN_RADIO_CHECKOUT_AGREEMENT = {
 
     let adj;
     if (person.isNonRanger) {
-      adj = 'Ranger volunteers';
+      adj = 'GPE volunteers';
     } else if (isPNV) {
-      adj = 'Prospective Rangers'
+      adj = 'Prospective volunteer'
     } else {
-      adj = 'Rangers';
+      adj = 'GPE';
     }
 
     return {
@@ -564,7 +564,7 @@ export const SIGN_RADIO_CHECKOUT_AGREEMENT = {
       route: 'me.radio-checkout',
       linkedMessage: {
         route: 'me.radio-checkout',
-        prefix: htmlSafe(`All ${adj} must sign the Ranger Radio Checkout Agreement prior to checking out a radio from the Rangers.<br><br>Visit`),
+        prefix: htmlSafe(`All ${adj} must sign the GPE Radio Checkout Agreement prior to checking out a radio from GPE.<br><br>Visit`),
         text: 'Me > Radio Agreement',
         suffix: 'to review and agree to the Radio Checkout Agreement.'
       },

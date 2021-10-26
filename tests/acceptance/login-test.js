@@ -15,7 +15,7 @@ module('Acceptance | login', function (hooks) {
     await visit('/');
 
     assert.equal(currentURL(), '/login');
-    assert.equal(document.title, 'Login | Ranger Clubhouse');
+    assert.equal(document.title, 'Login | GPE Clubhouse');
   });
 
   test('successful login', async function (assert) {
@@ -26,7 +26,7 @@ module('Acceptance | login', function (hooks) {
     await fillIn('input[name="password"]', person.password);
     await click('button.login-submit');
     assert.equal(currentURL(), '/me');
-    assert.equal(document.title, 'Homepage | Me | Ranger Clubhouse');
+    assert.equal(document.title, 'Homepage | Me | GPE Clubhouse');
   });
 
   test('invalid login', async function (assert) {
@@ -38,7 +38,7 @@ module('Acceptance | login', function (hooks) {
     // Should stay on the login page
     assert.equal(currentURL(), '/login', 'stay on the login page');
     assert.dom('.notice-danger').hasText(/The email and\/or password is incorrect/);
-    assert.equal(document.title, 'Login | Ranger Clubhouse');
+    assert.equal(document.title, 'Login | GPE Clubhouse');
   });
 
   test('successful logout', async function (assert) {
@@ -46,7 +46,7 @@ module('Acceptance | login', function (hooks) {
     await authenticateUser(person.id);
     await visit('/logout');
     assert.false(currentSession().isAuthenticated);
-    assert.equal(document.title, 'Login | Ranger Clubhouse');
+    assert.equal(document.title, 'Login | GPE Clubhouse');
   });
 
   test('person not authorized', async function (assert) {
@@ -60,7 +60,7 @@ module('Acceptance | login', function (hooks) {
     assert.equal(currentURL(), '/login', 'stay on the login page');
     // And there should be a flash modal with login error
     assert.dom('.notice-danger').hasText(/Login has been disabled/);
-    assert.equal(document.title, 'Login | Ranger Clubhouse');
+    assert.equal(document.title, 'Login | GPE Clubhouse');
   });
 
   test('prevent space for being entered in email field', async function (assert) {

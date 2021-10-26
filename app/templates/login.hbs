@@ -8,7 +8,7 @@
       <a href="https://ranger-clubhouse.burningman.org">ranger-clubhouse.burningman.org</a>
     </ChNotice>
   {{/if}}
-  <h2>Welcome To The Ranger Secret Clubhouse!</h2>
+  <h2>Welcome To The GPE Secret Clubhouse!</h2>
   {{#if this.tokenError}}
     <ChAlert @type="danger">
       {{#if this.welcome}}
@@ -35,7 +35,7 @@
       <ChNotice @title=" The email and/or password is incorrect." @type="danger" @icon="exclamation-triangle"/>
     {{else}}
       <ChNotice @type="danger" @icon="ban" @title="Login has been disabled for this account.">
-        Contact the Ranger Personnel Manager at {{mail-to (config "PersonnelEmail")}} for more
+        Contact the GPE Personnel Manager at {{mail-to (config "PersonnelEmail")}} for more
         information.
       </ChNotice>
     {{/if}}
