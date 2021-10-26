@@ -43,7 +43,7 @@ Showing {{this.viewVehicles.length}} of {{pluralize this.person_vehicle.length "
     <th>Driving Sticker</th>
     <th>Driving #</th>
     <th>License</th>
-    <th>Ranger Logo</th>
+    <th>GP&amp;E Logo</th>
     <th>Fuel Chit</th>
     <th>Amber Light</th>
     <th>MVR</th>
@@ -238,7 +238,7 @@ Showing {{this.viewVehicles.length}} of {{pluralize this.person_vehicle.length "
             </FormRow>
             <FormRow>
               <f.radioGroup @name="ranger_logo"
-                            @label="Ranger Logo"
+                            @label="GPE Logo"
                             @fixedLabel={{true}}
                             @options={{this.rangerLogoOptions}}
                             @inline={{true}}/>
@@ -314,7 +314,7 @@ Showing {{this.viewVehicles.length}} of {{pluralize this.person_vehicle.length "
                 {{get this.drivingStickerLabels this.entry.driving_sticker}}
               {{/if}}<br>
 
-              <b>Ranger logo decal:</b>
+              <b>GP&amp;E logo decal:</b>
               {{#if (eq this.entry.ranger_logo "none")}}
                 <i>none</i>
               {{else}}

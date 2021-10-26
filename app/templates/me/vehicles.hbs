@@ -69,7 +69,7 @@
               </p>
             {{/if}}
           </dd>
-          <dt>Ranger Logo Decal</dt>
+          <dt>GP&amp;E Logo Decal</dt>
           <dd>
             {{#if (eq vehicle.ranger_logo "none")}}
               None
@@ -79,14 +79,14 @@
               {{#if vehicle.isApproved}}
                 Approved to use
                 {{#if (eq vehicle.ranger_logo "permanent-new")}}
-                  a new permanent Ranger logo decal.
+                  a new permanent GP&amp;E logo decal.
                 {{else if (eq vehicle.ranger_logo "permanent-existing")}}
-                  your existing permanent Ranger logo decal.
+                  your existing permanent GP&amp;E logo decal.
                 {{else if (eq vehicle.ranger_logo "event")}}
-                  an event only Ranger logo decal.
+                  an event only GP&amp;E logo decal.
                 {{/if}}
               {{else}}
-                Awaiting approval to use a Ranger logo decal.
+                Awaiting approval to use a GP&amp;E logo decal.
               {{/if}}
             {{else}}
               Uh oh, unknown logo type [{{vehicle.ranger_logo}}]
@@ -236,7 +236,7 @@
             </div>
           </FormRow>
           <FormRow>
-            <FormLabel>Ranger Logo Decal</FormLabel>
+            <FormLabel>GP&amp;E Logo Decal</FormLabel>
             <div class="col-12">
               <f.radioGroup @name="ranger_logo"
                             @options={{this.rangerLogoOptions}}
