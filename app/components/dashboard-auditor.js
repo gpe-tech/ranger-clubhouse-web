@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import {inject as service} from '@ember/service';
 import {config} from 'clubhouse/utils/config';
-import {htmlSafe} from '@ember/string';
+import {htmlSafe} from '@ember/template';
 import {
   ACTION_NEEDED,
   BLOCKED,
@@ -13,7 +13,7 @@ import {
 } from "clubhouse/constants/dashboard";
 import * as DashboardStep from 'clubhouse/constants/dashboard-steps';
 
-const RANGER_INTEREST_STEP =   {
+const RANGER_INTEREST_STEP = {
   name: 'Interested in being a Black Rock Ranger?',
   check() {
     return {
@@ -54,14 +54,14 @@ export default class DashboardAuditorComponent extends Component {
    */
 
   get steps() {
-    const {milestones, person} = this.args;
+    const {milestones, person, agreements} = this.args;
     const steps = [];
     let prevCompleted = true;
 
     const periodSteps = (this.isOffSeason ? OFFSEASON_STEPS : AUDITOR_STEPS);
 
     periodSteps.forEach((step) => {
-      const check = step.check({milestones, prevCompleted, person, isAuditor: true});
+      const check = step.check({milestones, prevCompleted, person, isAuditor: true, agreements});
 
       if (check.result === SKIP) {
         return;
