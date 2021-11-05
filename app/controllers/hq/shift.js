@@ -1,7 +1,7 @@
 import ClubhouseController from 'clubhouse/controllers/clubhouse-controller';
 import {action} from '@ember/object';
 import {validatePresence} from 'ember-changeset-validations/validators';
-import {ALPHA} from 'clubhouse/constants/positions';
+// import {ALPHA} from 'clubhouse/constants/positions'; // GPE disabled ; no GPE alpha
 import {tracked} from '@glimmer/tracking';
 
 export default class HqShiftController extends ClubhouseController {
@@ -30,7 +30,8 @@ export default class HqShiftController extends ClubhouseController {
    */
 
   get isShinyPenny() {
-    return this.timesheets.find((t) => t.position_id === ALPHA) && this.person.isActive;
+    return false; // GPE disabled
+    // return this.timesheets.find((t) => t.position_id === ALPHA) && this.person.isActive;
   }
 
   /**

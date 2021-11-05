@@ -49,6 +49,7 @@ export default class PositionController extends ClubhouseController {
       }
     }
 
+    positions = positions.filterBy('id', '>500');
     return positions;
   }
 

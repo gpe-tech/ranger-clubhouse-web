@@ -33,7 +33,7 @@ export default class AdminBulkPositionsController extends ClubhouseController {
   }
 
   get positionOptions() {
-    const options = this.positions.map((p) => [p.title, p.id]);
+    const options = this.positions.select((p) => p.active ).map((p) => [p.title, p.id]);
     options.unshift(['Select a position', null]);
     return options;
   }

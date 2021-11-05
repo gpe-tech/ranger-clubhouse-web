@@ -1,11 +1,11 @@
 const PositionTypes = [
-  'Command',
-  'Frontline',
-  'HQ',
+  'Black Hole',
+  'Central Services',
+  'Exodus',
+  'Gate',
   'Logistics',
-  'Mentoring',
-  'Other',
-  'Training',
+  'Management',
+  'Perimeter'
 ];
 
 export default PositionTypes;
