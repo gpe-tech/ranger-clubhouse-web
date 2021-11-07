@@ -1,0 +1,6 @@
+FROM nginx:1.15-alpine as application
+
+VOLUME ["/var/www/application/nginx"]
+VOLUME ["/var/www/application/client"]
+
+# COPY ranger-clubhouse-web/docker/nginx-default.conf /etc/nginx/conf.d/default.conf
